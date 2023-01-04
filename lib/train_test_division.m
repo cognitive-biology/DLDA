@@ -7,7 +7,9 @@ function [TrainBatch,TestBatch] = train_test_division(stg,cls)
 % TESTBATCH.
 %
 % Ehsan Kakaei, Jochen Braun 2021
-
+% (https://github.com/cognitive-biology/DLDA)
+%
+% see also get_class_data, training_optimal_space, test_classification.
 
 disp('separating the train and test sets...')
     

@@ -4,7 +4,8 @@ function  DLDA_pipeline(stg,prf)
 % DLDA_PIPELINE(STG,PRF) gets the setting STG and profile PRF and performs
 % all the necessary steps for direct linear discriminant analysis (DLDA).
 % 
-% Ehsan Kakaei, Jochen Braun 2022
+% Ehsan Kakaei, Jochen Braun 2022 
+% (https://github.com/cognitive-biology/DLDA)
 
 %% check settings and profile
 check_inputs(stg,prf)

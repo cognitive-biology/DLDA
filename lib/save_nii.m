@@ -22,6 +22,7 @@ function save_nii(data,fname,prop)
 % See also nifti, open_nii.
 %
 % E. Kakaei, J. V. Dornas, J. Braun 2018
+% (https://github.com/cognitive-biology/Parcellation)
 
 N = nifti; % nifti object
 N.dat = file_array(fname,prop.dim,prop.dtype,prop.offset,prop.scl_slope,...

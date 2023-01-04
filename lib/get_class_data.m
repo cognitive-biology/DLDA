@@ -6,6 +6,9 @@ function cls = get_class_data(stg,prf,clean_data,seq)
 % and subjects.
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+%
+% see also get_clean_data, get_sequences.
 
 if nargin<4
     seq = [];

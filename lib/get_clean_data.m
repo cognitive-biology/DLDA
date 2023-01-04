@@ -8,6 +8,9 @@ function clean_data = get_clean_data(stg,prf,roi)
 % folder.
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+%
+% see also split_images.
 
 disp(['Cleaning data ROI_ID ',num2str(roi) '...'])
 

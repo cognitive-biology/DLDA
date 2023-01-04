@@ -8,6 +8,7 @@ function seq = get_sequences(stg,prf,dontsave)
 % measurement window (event-centered). 
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
 
 disp('Finding the sequences of each class...')
 

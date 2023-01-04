@@ -6,7 +6,14 @@ function [G_prime, M_class,class_size]  = training_optimal_space(TrainBatch)
 % projection matrices G_PRIME, centroid of the classes M_CLASS, and number
 % of data points in each class CLASS_SIZE.
 %
+% For the original DLDA algorithm see:
+% Yu and Yang 2001 & Ye et al. 2006.
+%
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+%
+% See also test_classification, train_test_division.
+
 disp('Training Direct LDA classifier...')
 TrainBatch_data = TrainBatch.data;
 

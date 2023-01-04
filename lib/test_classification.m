@@ -1,6 +1,16 @@
 function projected_test = test_classification(TestBatch,G_prime)
-% gets the test set and projection matrices to the discriminant space, and
-% returns the projected test data. 
+% projects the test set and to the discriminant space using projection
+% matrix, and returns the projected test data.
+%
+% PROJECTED_TEST = TEST_CLASSIFICATION(TESTBATCH,G_PRIME) gets the test set
+% TESTBATCH and projection matrices G_PRIME and returns the projected test
+% data PROJECTED_TEST.
+%
+% Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+% 
+% See also test_stats, train_test_division,training_optimal_space.
+
 
 %% project test data into reduced space
 TestBatch_data = TestBatch.data;

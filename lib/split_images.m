@@ -9,6 +9,9 @@ function split_images(stg,prf)
 %  in a savedirectory of defined in the STG variable.
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+%
+% see also img2atlas.
 
 Subjects = {prf(:).subject};
 individual_sub = unique(Subjects);

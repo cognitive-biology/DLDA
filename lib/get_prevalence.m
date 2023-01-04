@@ -1,15 +1,34 @@
 function [PN,PNstar,gamma0,mv] = get_prevalence(V,V_rnd,alpha,perms,StatNtest)
-% m and m_rnd are cells of (Nrepetition-by-NROIs)
+% gets the measured and permuted observations and returns the prevalence
+% statistics.
+% 
+% [PN,PNSTAR,GAMMA0,MV] = GET_PREVALENCE(V,V_RND,ALPHA,PERMS,STATNTEST)
+% gets the measured observations V, the permuted observations V_RND,
+% significance level ALPHA, number of second-level permutations PERMS,
+% number of first-level permutations STATNTEST, and returns uncorrected
+% p-value PN, corrected p-value PNSTAR, prevalence threshold GAMMA0, and
+% minimum statistic MV. 
+%
+% For original algorithm of permutation based prevalence statistics see:
+% Allefeld et al. (2016).
+%
+% Ehsan Kakaei, Jochen Braun 2021.
+% (https://github.com/cognitive-biology/DLDA)
+% 
+% see also test_stats.
+
+
 
 Nrepetition = size(V,1);
 NROIs = size(V,2);
 mv = zeros(NROIs,1); % minimum observation value between subject, per ROI
-mv_rand = zeros(NROIs,perms);% minimum second-level observation  between subject over random sample, per ROI
+mv_rand = zeros(NROIs,perms);% minimum second-level observation between subject over random sample, per ROI
 PN = nan(NROIs,1); % Uncorrected P-value
 PNstar = nan(NROIs,1); % corrected P-value
 gamma0 = zeros(NROIs,1); % Prevalence
 for Nr = 1:NROIs
     disp([num2str(ceil(100*Nr/NROIs)) ' %'])
+    % m and m_rnd are cells of (Nrepetition-by-NROIs)
     m = V(:,Nr);
     m_rnd = V_rnd(:,Nr);
     
@@ -44,7 +63,8 @@ end
 alphastar = (alpha-PNstar)./(1-PNstar);
 for Nr = 1:NROIs
     if PN(Nr)<=alphastar(Nr)
-        gamma0(Nr) = (nthroot(alphastar(Nr),Nsubjects)-nthroot(PN(Nr),Nsubjects))/(1-nthroot(PN(Nr),Nsubjects));
+        gamma0(Nr) = (nthroot(alphastar(Nr),Nsubjects)-nthroot(PN(Nr),Nsubjects))...
+            /(1-nthroot(PN(Nr),Nsubjects));
     end
 end
 end

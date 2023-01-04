@@ -5,7 +5,10 @@ function demo
 % 
 % Prerequisit: niftimatlib-1.2 toolbox (https://github.com/NIFTI-Imaging/nifti_matlab)
 %
-% Ehsan Kakaei, Jochen Braun 2022 
+% Ehsan Kakaei, Jochen Braun 2022
+% (https://github.com/cognitive-biology/DLDA)
+% 
+% see also DLDA_pipeline.
 
 %% flags and initialization
 generate_data = 1;

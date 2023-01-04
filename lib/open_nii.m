@@ -9,6 +9,7 @@ function [data,FileName,PathName] = open_nii(file)
 % See also nifti, save_nii.
 %
 % E. Kakaei, J. V. Dornas, J. Braun 2018
+% (https://github.com/cognitive-biology/Parcellation)
 
 switch computer
     case {'PCWIN' ,'PCWIN64'}

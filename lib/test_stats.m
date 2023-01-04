@@ -13,6 +13,9 @@ function [F,acc,conf,SSWs,SSBs,F_rand,acc_rand,conf_rand,SSWs_rand,SSBs_rand] = 
 % F_RAND,ACC_RAND,CONF_RAND,SSWS_RAND,and SSBS_RAND.
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
+%
+% see also test_classification, train_test_division, training_optimal_space.
 
 disp('cross-validating...')
 

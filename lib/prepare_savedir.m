@@ -7,6 +7,7 @@ function prepare_savedir(stg,prf)
 % files.
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
 
 disp('preparing save directory ...')
 Subjects = {prf(:).subject};

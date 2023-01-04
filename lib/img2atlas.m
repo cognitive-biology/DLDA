@@ -16,6 +16,7 @@ function out_data = img2atlas(atlasnii,atlaslist,image,varargin)
 % See also local_corr, open_nii.
 %
 % J. V. Dornas, E. Kakaei, J. Braun 2018
+% (https://github.com/cognitive-biology/Parcellation)
 
 %% initialize
 save_file = false;

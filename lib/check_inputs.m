@@ -5,13 +5,14 @@ function check_inputs(stg,prf)
 % for the required fields of each. 
 %
 % Ehsan Kakaei, Jochen Braun 2021
+% (https://github.com/cognitive-biology/DLDA)
 
 disp('Checking inputs...')
 % check inputs
 stg_fields = {'atlasnii','atlaslist','window','TR','classificationID',...
     'SaveDirectory','ROI_ID','Nrepetition','TestFraction','StatsPermutations',...
-    'PrevalencePermutations','alpha'}; % necassary fields for Settings
-prf_fields = {'subject','images','ID','time'}; % necassary fields for profile
+    'PrevalencePermutations','alpha'}; % necassary Settings fields 
+prf_fields = {'subject','images','ID','time'}; % necassary profile fields
 % check for the structure fields
 if ~isstruct(stg) || ~isstruct(prf)
     error('Setting and profile should be structures')
