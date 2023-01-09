@@ -56,12 +56,12 @@ if generate_data
             prf(jj).subject = name; % subject name or ID
             prf(jj).images = fname; % nifti images
             prf(jj).ID = ID; % Event's ID (trial + MR trigger)
-            prf(jj).time = time; % Time stamps of events
+            prf(jj).time = time; % Time stamps of the events
         end
     end
-    save(fullfile(stg.SaveDirectory,'profile_and_Settings.mat'),'prf','stg')
+    save(fullfile(stg.SaveDirectory,'demo_profile_and_Settings.mat'),'prf','stg')
 else
-    load(fullfile(stg.SaveDirectory,'profile_and_Settings.mat'))
+    load(fullfile(stg.SaveDirectory,'demo_profile_and_Settings.mat'))
 end
 %%  DLDA pipeline
 if execute_pipeline
@@ -74,12 +74,12 @@ accuracy.PNstar = PNstar; % p-val spatially extended global null hypothesis
 accuracy.gamma0 = gamma0; % Prevalence
 accuracy.mv = mv; % minimum statistics
 accuracy.mean = mu; % average accuracy
-save(fullfile(stg.SaveDirectory,'Results','Direct_LDA_evaluation.mat'),'accuracy','-v7.3')
+save(fullfile(stg.SaveDirectory,'Results','demo_DLDA_evaluation.mat'),'accuracy','-v7.3')
 end
 function [PN,PNstar,gamma0,mv,mu] = evaluation(stg)
 %% collect results of all ROIs
-V = cell(stg.Nrepetition,numel(stg.ROI_ID));
-V_rnd = cell(stg.Nrepetition,numel(stg.ROI_ID));
+V = cell(stg.Nrepetition,numel(stg.ROI_ID)); % observed values
+V_rnd = cell(stg.Nrepetition,numel(stg.ROI_ID)); % permuted observations
 for nr = 1:numel(stg.ROI_ID)
     ROI_ID = stg.ROI_ID;
     current_ROI = ROI_ID(nr);
@@ -88,12 +88,12 @@ for nr = 1:numel(stg.ROI_ID)
     V(:,nr) = x.acc;
     V_rnd(:,nr) = x.acc_rand;
 end
-mu =  mean(cell2mat(V));
+mu =  mean(cell2mat(V)); % average accuracy
 %% calculate prevalence
-alpha = stg.alpha;
-perms = stg.PrevalencePermutations;
-StatNtest = stg.StatsPermutations;
-[PN,PNstar,gamma0,mv] = get_prevalence(V,V_rnd,alpha,perms,StatNtest);
+alpha = stg.alpha; % significance
+perms = stg.PrevalencePermutations; % first-level permutations
+StatNtest = stg.StatsPermutations; % second-level permutations
+[PN,PNstar,gamma0,mv] = get_prevalence(V,V_rnd,alpha,perms,StatNtest); 
 
 end
 function [data,time,ID,fname] = generate_artificial_data(stg,NTRs)

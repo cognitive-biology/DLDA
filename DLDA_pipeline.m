@@ -21,7 +21,7 @@ split_images(stg,prf)
 %% get sequence
 
 get_sequences(stg,prf)
-
+%% ROI analysis
 for nr = 1:numel(stg.ROI_ID)
     ROI_ID = stg.ROI_ID;
     current_ROI = ROI_ID(nr);
