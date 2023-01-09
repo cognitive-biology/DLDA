@@ -4,7 +4,7 @@ function split_images(stg,prf)
 %
 %
 % SPLIT_IMAGES(STG,PRF) get original pre-processed images indicated in the 
-% PRF variable and extracts the data for each ROI of a  desired atlas,both  
+% PRF variable and extracts the data for each ROI of a desired atlas,both  
 % of which defined IN STG variable. Finally, the extracted data are saved
 %  in a savedirectory of defined in the STG variable.
 %

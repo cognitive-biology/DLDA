@@ -29,7 +29,7 @@ for nr = 1:numel(stg.ROI_ID)
     
     clean_data = get_clean_data(stg,prf,current_ROI);
     
-    %% combine data between sessions
+    %% data of classes combined over sessions
     
     cls_Data = get_class_data(stg,prf,clean_data);
     
@@ -60,8 +60,7 @@ for nr = 1:numel(stg.ROI_ID)
         
         projected_test_data = test_classification(TestBatch,G_prime);
         
-        %% get statistics
-        
+        % get statistics
         [F{nrep},acc{nrep},conf{nrep},SSWstar{nrep},SSBstar{nrep},...
             F_rand{nrep},acc_rand{nrep},conf_rand{nrep},SSWstar_rand{nrep},...
             SSBstar_rand{nrep}] = test_stats(stg,projected_test_data,M_class);
