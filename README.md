@@ -62,6 +62,3 @@ After having your fMRI images preprocessed, first you need to create a setting a
 ### Prevalence statistics: ###
 Additionally, we have included `get_prevalence` which performs a population prevalence inference using a 2-level permutation test [Allefeld et al. 2016](https://doi.org/10.1016/j.neuroimage.2016.07.040). 
 
-## Licence ##
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
-To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
